@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/mystyle.css" />
+    <link rel="stylesheet" href="~/Fonts/themify-icons/themify-icons.css" />
+</head>
+<body>
+    <div id="div-top">
+        <ul id="nav">
+            <li>
+                <a href="">Trang Chủ</a>
+            </li>
+            <li>
+                <a href="">Hướng Dẫn Mua Hàng</a>
+            </li>
+            <li>
+                <a href="">Liên hệ</a>
+            </li>
+            <li>
+                <a href="">Nhiều Hơn</a>
+                <ul class="subnav">
+                    <li>
+                        <a href="">content</a>
+                    </li>
+                    <li>
+                        <a href="">content</a>
+                    </li>
+                    <li>
+                        <a href="">content</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="wrap">
+                <form action="" class="search" method="post">
+                    <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                    <button type="submit" class="searchButton">
+                        Submit
+                    </button>
+                </form>
+                    </div>
+            </li>
+        </ul>
+        <div class="search-btn">
+            <i class="search-icon ti-shopping-cart">
+
+            </i>
+        </div>
+            
+               
+   
+        
+    </div>
+    <div id="div-main">
+        <div id="div-left">
+            <h3>Danh mục sản phẩm</h3>
+            <ul id="danhsach" style="list-style: none" >
+                
+                <li>
+                    <a>Trà sữa</a>
+                </li>
+                <li>
+                   <a href="luamach" >Thức uống lúa mạch</a>
+                </li>
+                <li>
+                    <a href="https://shopeefood.vn/ho-chi-minh/trai-cay-que-nuoc-ep-trai-cay-tuoi">Nước ép trái cây</a>
+                </li>
+                <li>
+                    <a>Trà hoa quả các loại</a>
+                </li>
+            </ul>
+        </div>
+        <div id="div-right">
+            @RenderBody()
+        </div>
+    </div>
+    <div id="div-footer">
+        Trường Đại Học Ngoại Ngữ Tin Học HUFLIT
+    </div>
+</body>
+</html>
