@@ -1,0 +1,76 @@
+﻿@model demoweb.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<style>
+    .dl-horizontal{
+        color:deeppink;
+    }
+    .dl-horizontal dd{
+        color:black;
+    }
+</style>
+
+
+<div style="margin: 10px auto; width: 70%;">
+    <h3 style="text-align:center">
+        BẠN CÓ CHẮC CHẮN MUỐN XÓA Product NÀY?
+    </h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NamePro)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NamePro)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DecriptionPro)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DecriptionPro)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImagePro)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImagePro)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category1.NameCate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category1.NameCate)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="XÓA" class="btn btn-primary" /> |
+        @Html.ActionLink("TRỞ LẠI", "Index", null, new { @class = "btn btn-danger" })
+    </div>
+        }
+    </div>
+    </div>

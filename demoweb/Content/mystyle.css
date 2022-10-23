@@ -1,5 +1,6 @@
 ﻿body {
     margin: 0;
+    height:100%
 }
 #div-top {
     height: 50px;
@@ -33,7 +34,7 @@ h3
 #nav li:hover a
 {
     color:black;
-    background-color:greenyellow;
+    background-color:hotpink;
 }
 #nav .subnav
 {
