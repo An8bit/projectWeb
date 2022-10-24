@@ -3,8 +3,12 @@
     height:100%
 }
 #div-top {
-    height: 50px;
-    background-color: green
+     height: 50px;
+    background-color: green;
+    top: 0;
+    left:0;
+    right:0;
+    position: fixed;
    
 }
 #nav
@@ -106,6 +110,7 @@ h3
     height: auto;
     font-family: Arial;
     font-size: 20px;
+    margin-top: 50px;
 }
 
     #div-left h3 {
@@ -115,6 +120,7 @@ h3
 #div-right {
     width: 75%;
     background-color: antiquewhite;
+    margin-top: 50px;
 }
 
 #div-footer {
@@ -125,4 +131,3 @@ h3
     left: 50%;
     padding-top: 25px;
 }
-
