@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<style>
+    .mt-3 label {
+        color: deeppink;
+    }
+
+    h2 {
+        color: deeppink;
+    }
+</style>
+<div style="margin: 10px auto; width: 70%;">
+    <h2 style="text-align: center">ĐĂNG NHẬP</h2>
+    <h2 style="color: deeppink;">@ViewBag.ThongBao</h2>
+    @using (Html.BeginForm("Login", "Users"))
+    {
+        @Html.ValidationSummary(true)
+        <div class="mb-3 mt-3">
+            <label for="name" class="form-label">TÊN:</label>
+            <input type="text" class="form-control" id="name" name="NameCus"
+                   required>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="pwd" class="form-label">PASSWORD:</label>
+            <input type="password" class="form-control" id="pwd" name="PassCus"
+                   required>
+        </div>
+        <button type="submit" class="btn btn-primary">XÁC NHẬN</button>
+    }
+</div>
+

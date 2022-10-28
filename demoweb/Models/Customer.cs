@@ -23,6 +23,7 @@ namespace demoweb.Models
         public string NameCus { get; set; }
         public string PhoneCus { get; set; }
         public string EmailCus { get; set; }
+        public string PassCus { get; set; }
     
         public virtual ICollection<OrderPro> OrderProes { get; set; }
     }

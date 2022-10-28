@@ -15,62 +15,47 @@
 
 
 <div style="margin: 10px auto; width: 70%;">
-    <h3 style="text-align:center">
-        BẠN CÓ CHẮC CHẮN MUỐN XÓA Product NÀY?
-    </h3>
+    <h3 style="text-align:center">BẠN CÓ CHẮC CHẮN MUỐN XÓA SẢN PHẨM NÀY?</h3>
     <div>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.NamePro)
+                TÊN SẢN PHẨM
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.NamePro)
             </dd>
-
             <dt>
-                @Html.DisplayNameFor(model => model.DecriptionPro)
+                MÔ TẢ
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.DecriptionPro)
             </dd>
-
             <dt>
-                @Html.DisplayNameFor(model => model.Price)
+                GIÁ
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.Price)
             </dd>
-
             <dt>
-                @Html.DisplayNameFor(model => model.ImagePro)
+                HÌNH ẢNH
             </dt>
-
             <dd>
-                @Html.DisplayFor(model => model.ImagePro)
+                <img src="~/Images/@Model.ImagePro" />
             </dd>
-
             <dt>
-                @Html.DisplayNameFor(model => model.Category1.NameCate)
+                NHÓM SẢN PHẨM
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.Category1.NameCate)
             </dd>
-
         </dl>
-
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input type="submit" value="XÓA" class="btn btn-primary" /> |
-        @Html.ActionLink("TRỞ LẠI", "Index", null, new { @class = "btn btn-danger" })
-    </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("TRỞ LẠI", "Index", null, new { @class = "btn btn-danger" })
+        </div>
         }
-    </div>
     </div>
