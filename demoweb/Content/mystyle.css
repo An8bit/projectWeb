@@ -1,10 +1,10 @@
-﻿body {
+body {
     margin: 0;
     height:100%
 }
 #div-top {
      height: 50px;
-    background-color: green;
+    background:linear-gradient(to right, #298A08,#088A68);
     top: 0;
     left:0;
     right:0;
@@ -106,26 +106,29 @@ h3
 
 }
 #div-left {
-    width: 25%;
+    width: 20%;
     height: auto;
     font-family: Arial;
     font-size: 20px;
     margin-top: 50px;
-}
+    background-color: #cef5ce;}
 
     #div-left h3 {
         text-align: center;
     }
 
 #div-right {
-    width: 75%;
-    background-color: antiquewhite;
+    width: 80%;
     margin-top: 50px;
+    background-size: 40in;
+    background-repeat: no-repeat;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20210903/pngtree-milk-tea-pearl-milk-image_792621.jpg);
 }
 
 #div-footer {
     height: 50px;
-    background-color: burlywood;
+    color: yellow;
+    background: linear-gradient(to right,#6E6E6E,#151515);
     bottom: 0px;
     text-align: center;
     left: 50%;
