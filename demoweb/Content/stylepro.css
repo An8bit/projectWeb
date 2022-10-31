@@ -1,4 +1,5 @@
-﻿body {
+body 
+{
 }
 #div-pro-list{
     display:flex;
@@ -19,7 +20,7 @@
 .box-description{
     height:120px;
     width:auto;
-    background-color:beige;
+    background-color:#e68b8b;
     margin-left:20px;
     margin-top:10px;
 }
