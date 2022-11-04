@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "GetCartInfo";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<style>
+    .table {
+        color:deeppink;
+        background-color:antiquewhite;
+    }
+    h2
+    {
+        color:deeppink;
+    }
+</style>
+
+<div style="margin: 10px auto; width: 70%;">
+    <h2 style="text-align: center">THÔNG TIN GIỎ HÀNG</h2>
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>MÃ SẢN PHẨM</th>
+                <th>TÊN</th>
+                <th>ẢNH</th>
+                <th>SỐ LƯỢNG</th>
+                <th>ĐƠN GIÁ</th>
+                <th>THÀNH TIỀN</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+
+                <tr>
+                    <td>@product.ProductID</td>
+                    <td>@product.NamePro</td>
+                    <td><img src="~/Images/@product.ImagePro" /></td>
+                    <td>@product.Number</td>
+                    <td>@product.Price</td>
+                    <td>@product.FinalPrice()</td>
+                </tr>
+            }
+            <tr style="font-weight:bold; text-align:right; color:red;">
+                <td colspan="5">Tổng số lượng: @ViewBag.TotalNumber</td>
+                <td colspan="1">Tổng tiền: @ViewBag.TotalPrice</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

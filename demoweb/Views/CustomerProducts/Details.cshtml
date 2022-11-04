@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div style="margin: 10px auto; width: 70%;">
+    <h2 style="text-align: center">CHI TIẾT SẢN PHẨM</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <img style="width: 100%;" src="~/Images/@Model.ImagePro">
+        </div>
+        <div class="col-md-6">
+            <h4>Tên sản phẩm: @Model.NamePro</h4>
+            <p style="text-align: justify">
+                <span style="font-weight: bold">Mô tả:</span> @Model.DecriptionPro
+            </p>
+            <p class="price">
+                Giá bán: <span style="color:red; font-size:24px;">
+                    @Model.Price
+                VNĐ
+            </span>
+        </p>
+        <a class="btn btn-primary" href="@Url.Action("AddToCart", "Cart", new {
+id = Model.ProductID })">
+            ĐẶT MUA
+        </a>
+    </div>
+</div>
+</div>

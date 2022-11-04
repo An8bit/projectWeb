@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div style="margin: 10px auto; width: 90%;">
+    <h2 style="text-align: center">DANH SÁCH SẢN PHẨM</h2>
+    <hr />
+    <div class="row">
+        @foreach (var sanpham in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-3">
+                <div class="card h-100">
+                    <img class="card-img-top"
+                         src="~/Images/@sanpham.ImagePro">
+                    <div class="card-body" style="text-align: center">
+                        <h4 class="card-title">@sanpham.NamePro</h4>
+                        <p class="card-text">@sanpham.Price</p>
+
+                        @Html.ActionLink("CHI TIẾT", "Details", new
+                        {
+                            id = sanpham.ProductID
+                        }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
