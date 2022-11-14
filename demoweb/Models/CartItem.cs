@@ -21,12 +21,12 @@ namespace demoweb.Models
         public CartItem(int ProductID)
         {
             this.ProductID = ProductID;
-            var productDB = db.Products.Single(s => s.ProductID ==
-            this.ProductID);
+            var productDB = db.Products.Single(s => s.ProductID == this.ProductID);
             this.NamePro = productDB.NamePro;
             this.ImagePro = productDB.ImagePro;
             this.Price = (decimal)productDB.Price;
             this.Number = 1;
         }
+        
     }
 }

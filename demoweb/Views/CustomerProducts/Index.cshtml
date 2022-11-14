@@ -4,9 +4,53 @@
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
 
+<style>
+    .section-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .section-title .text1 {
+            color: #d3b673;
+            font-size: 22px;
+            margin-bottom: 5px;
+            font-family: Muli, sans-serif;
+            font-weight: bold;
+        }
+
+        .section-title .text2 {
+            font-size: 36px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #000000;
+            margin-bottom: 10px;
+            font-family: "BalooExtra" !important;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            margin-bottom: 0 !important;
+            padding: 0 50px;
+        }
+
+    .icon {
+        background: url(https://tocotocotea.com/wp-content/themes/tocotocotea/assets/images/home_line.webp) no-repeat center;
+        width: 315px;
+        height: 30px;
+    }
+</style>
+
 <div style="margin: 10px auto; width: 90%;">
-    <h2 style="text-align: center">DANH SÁCH SẢN PHẨM</h2>
-    <hr />
+    <div class="section-title">
+        <div class="text1">
+            MENU
+        </div>
+        <div class="text2">
+            DANH SÁCH SẢN PHẨM
+        </div>
+        <div class="icon">
+
+        </div>
+    </div>
     <div class="row">
         @foreach (var sanpham in Model)
         {
@@ -18,13 +62,12 @@
                         <h4 class="card-title">@sanpham.NamePro</h4>
                         <p class="card-text">@sanpham.Price</p>
 
-                        @Html.ActionLink("CHI TIẾT", "Details", new
-                        {
-                            id = sanpham.ProductID
-                        }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("CHI TIẾT", "Details", new { id = sanpham.ProductID }, new { @class = "btn btn-primary" })
+                        <a href="/Cart/AddToCart/@sanpham.ProductID" class="btn btn-primary">Thêm vào giỏ</a>
                     </div>
                 </div>
             </div>
         }
+
     </div>
 </div>

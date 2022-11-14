@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Threading;
 
 namespace demoweb.Controllers
 {
@@ -18,6 +19,10 @@ namespace demoweb.Controllers
         }
         [HttpGet]
         public ActionResult Login()
+        {
+            return View();
+        }
+        public ActionResult Login2()
         {
             return View();
         }
@@ -69,7 +74,11 @@ namespace demoweb.Controllers
                     {
                         ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
                         //lưu vào sesion
+                        Thread.Sleep(3000);
                         Session["TaiKhoan"] = khachhang;
+                        
+                        return RedirectToAction("TrangChu", "Home");
+
                     }
                     else
                     {
@@ -78,6 +87,7 @@ namespace demoweb.Controllers
                 }
                 
             }
+            
             return View();
         }
     }

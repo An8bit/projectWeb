@@ -26,6 +26,7 @@
                 <th>SỐ LƯỢNG</th>
                 <th>ĐƠN GIÁ</th>
                 <th>THÀNH TIỀN</th>
+                <th>XÓA HÀNG</th>
             </tr>
         </thead>
         <tbody>
@@ -39,6 +40,9 @@
                     <td>@product.Number</td>
                     <td>@product.Price</td>
                     <td>@product.FinalPrice()</td>
+                    <td>
+                        <a href="/Cart/Remove/@product.ProductID" class="btn btn-danger">Xóa</a>
+                    </td>
                 </tr>
             }
             <tr style="font-weight:bold; text-align:right; color:red;">
@@ -47,4 +51,5 @@
             </tr>
         </tbody>
     </table>
+    <a href="/Cart/ClearCart" class="btn btn-primary">THANH TOAN</a>
 </div>

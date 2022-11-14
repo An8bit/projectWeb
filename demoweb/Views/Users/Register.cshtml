@@ -1,44 +1,60 @@
 ﻿
 @{
     ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 <style>
-    .mt-3 label 
-    {
-        color:deeppink;
+    .mt-3 label {
+        color: deeppink;
     }
-    h2{
-        color:deeppink;
+
+    .login-box h2 {
+        color: deeppink;
+    }
+
+    .login-box {
+        margin: 10px auto;
+        background-color: #ffffff4a;
+        padding: 20px 40px 20px 40px;
+        border-top: 0;
+        color: #666;
+        border-radius: 10px;
+        width: 40%;
+        max-width: 450px;
     }
 </style>
 
-<div style="margin: 10px auto; width: 70%;">
-    <h2 style="text-align: center">ĐĂNG KÍ THÀNH VIÊN</h2>
-    @using (Html.BeginForm("Register", "Users"))
-    {
-        @Html.ValidationSummary(true)
-        <div class="mb-3 mt-3">
-            <label for="name" class="form-label">TÊN:</label>
-            <input type="text" class="form-control" id="name"
-                   name="NameCus" required>
-        </div>
-        <div class="mb-3 mt-3">
-            <label for="email" class="form-label">EMAIL:</label>
-            <input type="email" class="form-control" id="email"
-                   name="EmailCus" required>
-        </div>
-        <div class="mb-3 mt-3">
-            <label for="pwd" class="form-label">PASSWORD:</label>
-            <input type="password" class="form-control" id="pwd"
-                   name="PassCus" required>
-        </div>
-        <div class="mb-3 mt-3">
-            <label for="phone" class="form-label">ĐIỆN THOẠI:</label>
-            <input type="text" class="form-control" id="phone"
-                   name="PhoneCus" required>
-        </div>
-        <button type="submit" class="btn btn-primary">XÁC NHẬN</button>
-    }
-</div>
 
+<body style="background-color: #4dd2ff ">
+
+   
+    <div class="login-box">
+        <h2 style="text-align: center">ĐĂNG KÍ THÀNH VIÊN</h2>
+        @using (Html.BeginForm("Register", "Users"))
+        {
+            @Html.ValidationSummary(true)
+            <div class="mb-3 mt-3">
+                <label for="name" class="form-label">TÊN:</label>
+                <input type="text" class="form-control" id="name"
+                       name="NameCus" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="email" class="form-label">EMAIL:</label>
+                <input type="email" class="form-control" id="email"
+                       name="EmailCus" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="pwd" class="form-label">PASSWORD:</label>
+                <input type="password" class="form-control" id="pwd"
+                       name="PassCus" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="phone" class="form-label">ĐIỆN THOẠI:</label>
+                <input type="text" class="form-control" id="phone"
+                       name="PhoneCus" required>
+            </div>
+            <button type="submit" class="btn btn-primary">XÁC NHẬN</button>
+            <a href="/Users/Login" class="btn btn-primary">Trở về đăng nhập</a>
+        }
+    </div>
+</body>

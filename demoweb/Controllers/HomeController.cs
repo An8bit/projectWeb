@@ -1,4 +1,5 @@
-﻿using System;
+﻿using demoweb.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace demoweb.Controllers
 {
     public class HomeController : Controller
     {
+        private DBSportStoreEntities db = new DBSportStoreEntities();
         public ActionResult Index()
         {
             return View();
@@ -28,11 +30,11 @@ namespace demoweb.Controllers
         }
         public ActionResult TrangChu()
         {
-            return View();
+               
+                var products = db.Products;
+                return View(products.ToList());
+            
         }
-        public ActionResult luamach()
-        {
-            return View();
-        }
+        
     }
 }

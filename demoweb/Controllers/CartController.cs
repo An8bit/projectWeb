@@ -26,8 +26,7 @@ namespace demoweb.Controllers
         {
             //Lấy giỏ hàng hiện tại
             List<CartItem> myCart = GetCart();
-            CartItem currentProduct = myCart.FirstOrDefault(p =>
-            p.ProductID == id);
+            CartItem currentProduct = myCart.FirstOrDefault(p =>p.ProductID == id);
             if (currentProduct == null)
             {
                 currentProduct = new CartItem(id);
@@ -71,11 +70,25 @@ namespace demoweb.Controllers
             return View(myCart); //Trả về View hiển thị thông tin giỏ hàng
                                  
         }
+        //hàm xóa sản phẩm trong giỏ hàng
+      public ActionResult Remove(int id)
+        {
+            List<CartItem> myCart = GetCart();
+            myCart.RemoveAll(s => s.ProductID == id);
+
+            return RedirectToAction("GetCartInfo","Cart");
+        }
         public ActionResult CartPartial()
         {
             ViewBag.TotalNumber = GetTotalNumber();
             ViewBag.TotalPrice = GetTotalPrice();
             return PartialView();
+        }
+        public ActionResult ClearCart()
+        {
+            List<CartItem> myCart = GetCart();
+            myCart.Clear();
+            return RedirectToAction("Trangchu", "home");
         }
     }
 }
