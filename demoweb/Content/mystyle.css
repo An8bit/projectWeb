@@ -2,30 +2,56 @@ body {
     margin: 0;
     height:100%
 }
-#div-top {
-     height: 50px;
-    background:linear-gradient(to right, #298A08,#088A68);
+#top-logo {
+    vertical-align: middle;
+    width: 90px;
     top: 0;
-    left:0;
-    right:0;
-    position: fixed;
-   
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: -20px;
+
 }
-#nav
-{
+.logo{
+    width:90px;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    top: 0;
+    margin-top: -60px;
+    margin-left: 500px;
     display:inline-block;
 }
+#div-top {
+    height: 60px;
+    background: #333;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 5;
+    transition: top 0.3s;
+    display:block;
+}
 
-#nav li
-{
-    display:inline-flex
+#nav {
+    display: inline-block;
+    margin-bottom:0;
 }
-    #nav li a {
-        color: gold;
-        text-decoration: none;
-        line-height:50px;
-        padding:0 16px;
-}
+
+    #nav li {
+        display: inline-flex
+    }
+
+        #nav li a {
+            color: gold;
+            text-decoration: none;
+            line-height: 50px;
+            padding: 0 50px;
+            font-size: 17px;
+        }
 h3
 {
     color:deeppink;
