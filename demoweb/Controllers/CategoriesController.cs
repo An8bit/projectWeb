@@ -10,7 +10,7 @@ namespace demoweb.Controllers
 {
     public class CategoriesController : Controller
     {  
-            DBSportStoreEntities1 database = new DBSportStoreEntities1();
+            DBSportStoreEntities database = new DBSportStoreEntities();
             // GET: Categories
             public ActionResult Index()
             {

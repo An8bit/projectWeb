@@ -7,7 +7,7 @@ namespace demoweb.Models
 {
     public class CartItem
     {
-        DBSportStoreEntities1 db = new DBSportStoreEntities1();
+        DBSportStoreEntities db = new DBSportStoreEntities();
         public int ProductID { get; set; }
         public string NamePro { get; set; }
         public string ImagePro { get; set; }

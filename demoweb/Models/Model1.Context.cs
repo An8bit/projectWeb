@@ -13,10 +13,10 @@ namespace demoweb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBSportStoreEntities1 : DbContext
+    public partial class DBSportStoreEntities : DbContext
     {
-        public DBSportStoreEntities1()
-            : base("name=DBSportStoreEntities1")
+        public DBSportStoreEntities()
+            : base("name=DBSportStoreEntities")
         {
         }
     

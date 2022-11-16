@@ -14,7 +14,7 @@ namespace demoweb.Controllers
 {
     public class ProductsController : Controller
     {
-        private DBSportStoreEntities1 db = new DBSportStoreEntities1();
+        private DBSportStoreEntities db = new DBSportStoreEntities();
 
         // GET: Products
         public ActionResult Index()

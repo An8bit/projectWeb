@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/mystyle.css"
+    <link rel="stylesheet" href="~/Content/mystyle.css" />
     <link rel="stylesheet" href="~/Fonts/themify-icons/themify-icons.css" />
     <link href="~/Scripts/script.js" rel="stylesheet" />
     <script src="~/Scripts/JavaScriptlinedown.js"></script>
@@ -14,16 +14,17 @@
 
 
 </head>
-<div id="div-top">
-    <ul id="nav">
-        <li id="top-logo">
-            <a href="/Home/TrangChu">
-                <img src="~/Images/logo-removebg-preview.png" alt="logo" class="logo" link />
-            </a>
+<body>
+    <div id="div-top">
+        <ul id="nav">
+            <li id="top-logo">
+                <a href="/Home/TrangChu">
+                    <img src="~/Images/logo-removebg-preview.png" alt="logo" class="logo" link />
+                </a>
 
 
 
-            @* <li>
+                @* <li>
                     <div class="wrap">
                         <form action="" class="search" method="post">
                             <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
@@ -33,44 +34,44 @@
                         </form>
                     </div>
                 </li>*@
-        <li>
-            <div class="wrap">
-                <form action="" class="search" method="post">
-                    @using (Html.BeginForm("ProductList", "Products", FormMethod.Get))
-                    {
-                        <table>
-                            <tr>
-                                <td>
-                                    <input class="input-search" name="SearchString" placeholder="Tìm sản phẩm..." />
+            <li>
+                <div class="wrap">
+                    <form action="" class="search" method="post">
+                        @using (Html.BeginForm("ProductList", "Products", FormMethod.Get))
+                        {
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input class="input-search" name="SearchString" placeholder="Tìm sản phẩm..." />
 
 
-                                </td>
-                            </tr>
-                        </table>
-                    }
+                                    </td>
+                              </tr>
+                            </table>
+                        }
+                    </form>
+                </div>
+            </li>        
+        </ul>
+        <ul class="nav2" style="float:right;display:flex">
+            <a class="ti-github" href="/Users/Login">
+                ĐĂNG NHẬP
+            </a>
+            <li >
+                <div class="search-btn" >
+                @Html.Action("CartPartial", "Cart")
+                     </div>
+            </li>
 
-            </div>
-        </li>*
-
-    </ul>
-    <div-top-right>
-        <div class="login-btn">
-           
-        <h2>
-            login
-        </h2>
-        </div>
-        <div class="search-btn">
-            @Html.Action("CartPartial", "Cart")
+        </ul>
+      
+       
 
 
-        </div>
-    </div-top-right>
-</div>
+    </div>
 <div id="div-main">
-    <div class="sidebar-left">
-        <div class="list-card" style="background-color:lightgrey; min-height: 600px;width:150px;padding-top:50px">
-
+    <div class="sidebar-left" style="height:100%;background-color:aqua;width:30%">
+        <div class="list-card" style="height: 100%;width:100%;padding-top:50px">
             @{ Html.RenderAction("CategoryPartial", "Categories");}
         </div>
     </div>
