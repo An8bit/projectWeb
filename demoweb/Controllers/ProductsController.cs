@@ -14,7 +14,7 @@ namespace demoweb.Controllers
 {
     public class ProductsController : Controller
     {
-        private DBSportStoreEntities db = new DBSportStoreEntities();
+        private DBSportStoreEntities1 db = new DBSportStoreEntities1();
 
         // GET: Products
         public ActionResult Index()
@@ -158,8 +158,42 @@ namespace demoweb.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-       // public ActionResult
+        // public ActionResult
+        // GET: Products
+        public ActionResult ProductList(int? page, string category, string SearchString, double min = double.MinValue, double max = double.MaxValue)
+        { // Tạo Products và có tham chiếu đến Category
+            var products = db.Products.Include(p => p.Category1);
+            // Tìm kiếm chuỗi truy vấn theo category
+            if (category == null)
+            {
+                products = db.Products.OrderByDescending(x => x.NamePro);
+            }
+            else
+            {
+                products = db.Products.OrderByDescending(x => x.Category).Where(x => x.Category == category);
 
+            }
+            //Tìm kiếm chuỗi truy vấn theo NamePro, nếu chuỗi truy vấn SearchString khác rỗng, null
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                products = products.Where(s => s.NamePro.Contains(SearchString));
+            }
+            // Tìm kiếm chuỗi truy vấn theo đơn giá
+            if (min >= 0 && max > 0)
+            {
+                products = db.Products.OrderByDescending(x => x.Price).Where(p => (double)p.Price >= min && (double)p.Price <= max);
+            }
+
+            // Khai báo mỗi trang 4 sản phẩm
+            int pageSize = 4;
+            // Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
+            // nếu page = null thì lấy giá trị 1 cho biến pageNumber.
+            int pageNumber = (page ?? 1);
+            // Nếu page = null thì đặt lại page là 1.
+            if (page == null) page = 1;
+            // Trả về các product được phân trang theo kích thước và số trang.
+            return View(products.ToList());
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

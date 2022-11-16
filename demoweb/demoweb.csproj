@@ -557,7 +557,7 @@
     <Content Include="Fonts\themify-icons\themify-icons.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\giohang.png" />
+    <Content Include="Images\logo-removebg-preview.png" />
     <Content Include="Images\Trasua1.png" />
     <Content Include="Images\trasuabacha.png" />
     <Content Include="Images\trasuadautay.png" />
@@ -569,8 +569,8 @@
     <Content Include="Images\trasuavinhai.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -663,6 +663,9 @@
     <Content Include="Views\Cart\CartPartial.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
+    <Content Include="Views\Shared\_ProductLayout.cshtml" />
+    <Content Include="Views\Categories\CategoryPartial.cshtml" />
+    <Content Include="Views\Products\ProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

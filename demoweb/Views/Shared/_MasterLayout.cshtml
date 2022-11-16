@@ -14,7 +14,7 @@
     <div id="div-top">
         <ul id="nav">
             <li id="top-logo">
-                <img src="~/Content/images/Untitled_design-removebg-preview.png" alt="logo" class="logo" />
+                <img src="~/Images/logo-removebg-preview.png" alt="logo" class="logo" />
 
             <li>
             <li>
@@ -57,10 +57,17 @@
 
         </div>
     </div>
-    <div id="div-main">    
-        <div id="div-right">
+    <div id="div-main">
+        <div class="order-sidebar sidebar-left">
+            <div class="list-card" style="background-color:lightgrey; min-height: 600px;width:150px;padding-top:50px">
+              
+                @{ Html.RenderAction("CategoryPartial", "Categories");}
+            </div>
+        </div>
+        <div class="order-sidebar sidebar-right">
             @RenderBody()
         </div>
+
     </div>
     <div id="div-footer">
         Trường Đại Học Ngoại Ngữ Tin Học HUFLIT

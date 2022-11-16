@@ -10,7 +10,7 @@ namespace demoweb.Controllers
 {
     public class UsersController : Controller
     {
-        private DBSportStoreEntities database = new DBSportStoreEntities();
+        private DBSportStoreEntities1 database = new DBSportStoreEntities1();
         // GET: Users
         [HttpGet]
         public ActionResult Register()

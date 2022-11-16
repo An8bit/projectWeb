@@ -23,10 +23,10 @@
             color: #000000;
             margin-bottom: 10px;
             font-family: "BalooExtra" !important;
-            letter-spacing: 1.8px;
+            letter-spacing: .5px;
             text-transform: uppercase;
             margin-bottom: 0 !important;
-            padding: 0 50px;
+            padding: 50px 400px;
         }
     .icon {
         background: url(https://tocotocotea.com/wp-content/themes/tocotocotea/assets/images/home_line.webp) no-repeat center;
@@ -59,7 +59,7 @@
                         <h4 class="card-title">@sanpham.NamePro</h4>
                         <p class="card-text">@sanpham.Price</p>
 
-                        @Html.ActionLink("CHI TIẾT", "Details", new { id = sanpham.ProductID }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("CHI TIẾT", "Details", "CusTomerProducts", new { id = sanpham.ProductID }, new { @class = "btn btn-primary" })
                         <a href="/Cart/AddToCart/@sanpham.ProductID" class="btn btn-primary">Thêm vào giỏ</a>
                     </div>
                 </div>

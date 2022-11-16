@@ -9,7 +9,7 @@ namespace demoweb.Controllers
 {
     public class HomeController : Controller
     {
-        private DBSportStoreEntities db = new DBSportStoreEntities();
+        private DBSportStoreEntities1 db = new DBSportStoreEntities1();
         public ActionResult Index()
         {
             return View();

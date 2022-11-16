@@ -1,0 +1,28 @@
+﻿@model IEnumerable<demoweb.Models.Product>
+@{
+    ViewBag.Title = "Muahang";
+    Layout = "~/Views/Shared/_ProductLayout.cshtml";
+}
+<div class="container">
+
+    <!--Vị trí trình bày cho mục 5, tìm sản phẩm theo tên sp và giá-->
+</div>
+<div class="row">
+    @foreach (var sanpham in Model)
+    {
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card h-100">
+                <img class="card-img-top"
+                     src="~/Images/@sanpham.ImagePro">
+                <div class="card-body" style="text-align: center">
+                    <h4 class="card-title">@sanpham.NamePro</h4>
+                    <p class="card-text">@sanpham.Price</p>
+
+                    @Html.ActionLink("CHI TIẾT", "Details" ,"CusTomerProducts", new { id = sanpham.ProductID }, new { @class = "btn btn-primary" })
+                    <a href="/Cart/AddToCart/@sanpham.ProductID" class="btn btn-primary">Thêm vào giỏ</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

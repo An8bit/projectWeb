@@ -36,7 +36,7 @@ namespace demoweb.Controllers
             {
                 currentProduct.Number++; //Sản phẩm đã có trong giỏ thì tăng số lượng lên 1
             }
-            return RedirectToAction("Index", "CustomerProducts", new
+            return RedirectToAction("ProductList","Products", new
             {
                 id = id
             });
@@ -63,7 +63,7 @@ namespace demoweb.Controllers
             //Nếu giỏ hàng trống thì trả về trang ban đầu
             if (myCart == null || myCart.Count == 0)
             {
-                return RedirectToAction("Index", "CustomerProducts");
+                return RedirectToAction("ProductList", "Products");
             }
             ViewBag.TotalNumber = GetTotalNumber();
             ViewBag.TotalPrice = GetTotalPrice();

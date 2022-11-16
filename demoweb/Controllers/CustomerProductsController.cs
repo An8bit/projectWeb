@@ -10,7 +10,7 @@ namespace demoweb.Controllers
 {
     public class CustomerProductsController : Controller
     {
-        private DBSportStoreEntities db = new DBSportStoreEntities();
+        private DBSportStoreEntities1 db = new DBSportStoreEntities1();
         // GET: Products
         public ActionResult Index()
         {
@@ -31,6 +31,7 @@ namespace demoweb.Controllers
             }
             return View(product);
         }
+
        
         
        

@@ -108,11 +108,11 @@ h3 {
 }
 
 .wrap {
-    width: 30%;
+    width: 60%;
     position: absolute;
-    padding: 0 60px;
-    top: 20px;
-    left: 600px;
+    padding: 0 5px;
+    top: 8px;
+    left: 400px;
 }
 
 #div-top .search-btn {
@@ -166,4 +166,35 @@ h3 {
     text-align: center;
     left: 50%;
     padding-top: 25px;
+}
+.sidebar-left {
+    max-width: 25%;
+    color: #282828;
+    background: #ffffff;
+    height: fit-content;
+    box-shadow: 0 2px 7px 0 rgb(0 0 0 / 5%);
+    border-radius: 4px;
+    padding-bottom: 12px;
+}
+
+.sidebar-right {
+    padding: 70px 50px;
+}
+.input-search {
+    width: 500px;
+    border-radius: 30px;
+    border: none;
+    background: #fbfbfb;
+    height: 32px;
+    font-size: 14px;
+    padding: 0 20px 0 30px;
+    background-image:url(/Fonts/themify-icons/SVG/search.svg);
+    background-repeat: no-repeat;
+    background-position: 8px 10px;
+    background-size: 14px 14px
+}
+.login-btn { 
+  
+    float: right;
+    padding: 13px 41px;
 }

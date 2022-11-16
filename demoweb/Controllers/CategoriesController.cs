@@ -10,7 +10,7 @@ namespace demoweb.Controllers
 {
     public class CategoriesController : Controller
     {  
-            DBSportStoreEntities database = new DBSportStoreEntities();
+            DBSportStoreEntities1 database = new DBSportStoreEntities1();
             // GET: Categories
             public ActionResult Index()
             {
@@ -88,6 +88,11 @@ namespace demoweb.Controllers
             {
                 return Content("Không xóa được do có liên quan đến bảng khác");
             }
+        }
+        public PartialViewResult CategoryPartial()
+        {
+            var cateList = database.Categories.ToList();
+            return PartialView(cateList);
         }
     }
 }
