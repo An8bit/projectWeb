@@ -35,6 +35,13 @@ namespace demoweb.Controllers
                 return View(products.ToList());
             
         }
-        
+        public ActionResult TrangChu1()
+        {
+
+            var products = db.Products;
+            return View(products.ToList());
+
+        }
+
     }
 }

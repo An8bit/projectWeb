@@ -25,6 +25,7 @@
                 <th>ẢNH</th>
                 <th>SỐ LƯỢNG</th>
                 <th>ĐƠN GIÁ</th>
+                <th>ĐIỀU CHỈNH</th>
                 <th>THÀNH TIỀN</th>
                 <th>XÓA HÀNG</th>
             </tr>
@@ -33,21 +34,60 @@
             @foreach (var product in Model)
             {
 
-                <tr>
-                    <td>@product.ProductID</td>
-                    <td>@product.NamePro</td>
-                    <td><img src="~/Images/@product.ImagePro" /></td>
-                    <td>@product.Number</td>
-                    <td>@product.Price</td>
-                    <td>@product.FinalPrice()</td>
-                    <td>
-                        <a href="/Cart/Remove/@product.ProductID" class="btn btn-danger">Xóa</a>
-                    </td>
-                </tr>
+            <tr>
+               
+                <td>@product.ProductID  </td>
+                <td>@product.NamePro</td>
+                <td><img src="~/Images/@product.ImagePro" /></td>
+                <td>@product.Number</td>
+                <td>@product.Price</td>
+                <td>
+                    @using (Html.BeginForm("update_quatity", "Cart"))
+                    {
+                        <input type="hidden" value="@product.ProductID" name="Idpro" />
+                        <input type="number" value="@product.Number" name="quantity" />
+                        <input type="submit" value="Update" />
+
+                    }
+
+
+
+                </td>
+                <td>@product.FinalPrice()</td>
+                <td>
+                    <a href="/Cart/Remove/@product.ProductID" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
             }
             <tr style="font-weight:bold; text-align:right; color:red;">
                 <td colspan="5">Tổng số lượng: @ViewBag.TotalNumber</td>
                 <td colspan="1">Tổng tiền: @ViewBag.TotalPrice</td>
+            </tr>
+            <tr>
+                @using (Html.BeginForm("CheckOut", "Cart"))
+                 {
+                <table>
+                    <tr>
+                        <td>
+                            code
+                        </td>
+                        <td>
+                            <input type="number" name="ID" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            code2
+                        </td>
+                        <td>
+                            <input type="number" name="AddressDeliverry" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <input type="submit" value="CheckOut" />
+                    </tr>
+                </table>
+                }
             </tr>
         </tbody>
     </table>

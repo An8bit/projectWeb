@@ -11,13 +11,14 @@ namespace demoweb.Models
         public int ProductID { get; set; }
         public string NamePro { get; set; }
         public string ImagePro { get; set; }
-        public decimal Price { get; set; }
+        public decimal Price { get; set; }       
         public int Number { get; set; }
         //Tính FinalPrice = Price * Number
         public decimal FinalPrice()
         {
             return Number * Price;
         }
+
         public CartItem(int ProductID)
         {
             this.ProductID = ProductID;

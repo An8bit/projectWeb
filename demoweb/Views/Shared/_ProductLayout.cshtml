@@ -54,9 +54,22 @@
             </li>        
         </ul>
         <ul class="nav2" style="float:right;display:flex">
-            <a class="ti-github" href="/Users/Login">
-                ĐĂNG NHẬP
-            </a>
+            <div class="navlogin">
+                <a class="ti-github">
+                    @if (Session["TaiKhoan"] != null)
+                    {
+                        @Session["TaiKhoan"]
+
+                    }
+                </a>
+                <ul class="navlog">
+                    <li>
+                        <a href="/Home/TrangChu">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <li >
                 <div class="search-btn" >
                 @Html.Action("CartPartial", "Cart")

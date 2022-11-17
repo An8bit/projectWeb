@@ -666,6 +666,10 @@
     <Content Include="Views\Shared\_ProductLayout.cshtml" />
     <Content Include="Views\Categories\CategoryPartial.cshtml" />
     <Content Include="Views\Products\ProductList.cshtml" />
+    <Content Include="Views\Shared\_LayoutLoginweb.cshtml" />
+    <Content Include="Views\Home\TrangChu1.cshtml" />
+    <Content Include="Views\Cart\cheking_sucess.cshtml" />
+    <Content Include="Views\Cart\checking_sucess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

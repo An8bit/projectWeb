@@ -9,6 +9,7 @@ namespace demoweb.Controllers
 {
     public class CartController : Controller
     {
+        private DBSportStoreEntities database = new DBSportStoreEntities();
         // GET: Cart
         public List<CartItem> GetCart()
         {
@@ -26,7 +27,7 @@ namespace demoweb.Controllers
         {
             //Lấy giỏ hàng hiện tại
             List<CartItem> myCart = GetCart();
-            CartItem currentProduct = myCart.FirstOrDefault(p =>p.ProductID == id);
+            CartItem currentProduct = myCart.FirstOrDefault(p => p.ProductID == id);
             if (currentProduct == null)
             {
                 currentProduct = new CartItem(id);
@@ -36,7 +37,7 @@ namespace demoweb.Controllers
             {
                 currentProduct.Number++; //Sản phẩm đã có trong giỏ thì tăng số lượng lên 1
             }
-            return RedirectToAction("ProductList","Products", new
+            return RedirectToAction("ProductList", "Products", new
             {
                 id = id
             });
@@ -68,27 +69,86 @@ namespace demoweb.Controllers
             ViewBag.TotalNumber = GetTotalNumber();
             ViewBag.TotalPrice = GetTotalPrice();
             return View(myCart); //Trả về View hiển thị thông tin giỏ hàng
-                                 
+
         }
         //hàm xóa sản phẩm trong giỏ hàng
-      public ActionResult Remove(int id)
+        public ActionResult Remove(int id)
         {
             List<CartItem> myCart = GetCart();
             myCart.RemoveAll(s => s.ProductID == id);
 
-            return RedirectToAction("GetCartInfo","Cart");
+            return RedirectToAction("GetCartInfo", "Cart");
         }
+        //TONG SL HANG
         public ActionResult CartPartial()
         {
             ViewBag.TotalNumber = GetTotalNumber();
             ViewBag.TotalPrice = GetTotalPrice();
             return PartialView();
         }
+        //XÓA GIỎ HÀNG
         public ActionResult ClearCart()
         {
             List<CartItem> myCart = GetCart();
             myCart.Clear();
             return RedirectToAction("Trangchu", "home");
+        }
+        //edit số hàng thêm hoặc bớt
+        public ActionResult update_quatity(FormCollection form)
+        {
+            List<CartItem> items = GetCart();
+            int id = int.Parse(form["Idpro"]);
+            var item = items.Find(s => s.ProductID == id);
+            int a = int.Parse(form["quantity"]);
+            if (a < 0)
+            {
+                return RedirectToAction("GetCartInfo", "Cart");
+            }
+            else
+            {
+                if (item != null)
+                {
+                    item.Number = a;
+                }
+            }
+
+            return RedirectToAction("GetCartInfo", "Cart");
+        }
+        public ActionResult CheckOut(FormCollection form)
+        {
+            try
+            {
+                List<CartItem> myCart = GetCart();
+
+                OrderPro oder = new OrderPro();
+                oder.DateOrder = DateTime.Now;
+                oder.AddressDeliverry = form["AddressDeliverry"];
+                oder.IDCus = int.Parse(form["ID"]);
+                database.OrderProes.Add(oder);
+                foreach (var item in myCart)
+                {
+                    OrderDetail detail = new OrderDetail();
+                    detail.IDOrder = oder.ID;
+                    detail.IDProduct = item.ProductID;
+                    detail.UnitPrice = (double)item.Price;
+                    detail.Quantity = item.Number;
+                    database.OrderDetails.Add(detail);
+                }
+                database.SaveChanges();
+                myCart.Clear();
+                return RedirectToAction("checking_sucess", "Cart");
+
+            }
+            catch
+            {
+                return Content("error checkout");
+
+            }
+           
+        }
+        public ActionResult checking_sucess()
+        {
+            return View();
         }
     }
 }

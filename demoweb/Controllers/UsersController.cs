@@ -22,10 +22,7 @@ namespace demoweb.Controllers
         {
             return View();
         }
-        public ActionResult Login2()
-        {
-            return View();
-        }
+       
         [HttpPost]
         public ActionResult Register(Customer cust)
         {
@@ -74,10 +71,10 @@ namespace demoweb.Controllers
                     {
                         ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
                         //lưu vào sesion
-                        Thread.Sleep(3000);
-                        Session["TaiKhoan"] = khachhang;
+                        Thread.Sleep(2000);
+                        Session["TaiKhoan"] = khachhang.NameCus;
                         
-                        return RedirectToAction("TrangChu", "Home");
+                        return RedirectToAction("TrangChu1", "Home");
 
                     }
                     else
@@ -89,6 +86,11 @@ namespace demoweb.Controllers
             }
             
             return View();
+        }
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("TrangChu", "Home");
         }
     }
 }
