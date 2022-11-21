@@ -31,20 +31,24 @@ namespace demoweb.Controllers
         {
             //Lấy giỏ hàng hiện tại
             List<CartItem> myCart = GetCart();
-            CartItem currentProduct = myCart.FirstOrDefault(p => p.ProductID == id);
-            if (currentProduct == null)
+            if (Session["TaiKhoan"] != null)
             {
-                currentProduct = new CartItem(id);
-                myCart.Add(currentProduct);
+                CartItem currentProduct = myCart.FirstOrDefault(p => p.ProductID == id);
+                if (currentProduct == null)
+                {
+                    currentProduct = new CartItem(id);
+                    myCart.Add(currentProduct);
+                }
+                else
+                {
+                    currentProduct.Number++; //Sản phẩm đã có trong giỏ thì tăng số lượng lên 1
+                }
+                return RedirectToAction("ProductList", "Products", new
+                {
+                    id = id
+                });
             }
-            else
-            {
-                currentProduct.Number++; //Sản phẩm đã có trong giỏ thì tăng số lượng lên 1
-            }
-            return RedirectToAction("ProductList", "Products", new
-            {
-                id = id
-            });
+            return RedirectToAction("Login", "Users");
         }
         private int GetTotalNumber()
         {

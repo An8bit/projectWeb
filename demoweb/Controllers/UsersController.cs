@@ -98,10 +98,16 @@ namespace demoweb.Controllers
             if (Session["taikhoan"] != null)
             {
                 Session.Abandon();
-                return RedirectToAction("ProductList", "Products");
-               
+                return RedirectToAction("TrangChu", "Home");
+
             }
-            return RedirectToAction("TrangChu", "Home");
+            else if (Session["admin"] != null)
+            {
+                Session.Abandon();
+                return RedirectToAction("TrangChu", "Home");
+            }
+
+            return RedirectToAction("login", "User");
         }
     }
 }
