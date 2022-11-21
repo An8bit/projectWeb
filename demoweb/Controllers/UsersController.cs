@@ -67,15 +67,21 @@ namespace demoweb.Controllers
                 {
                     //tìm khách hàng có tên đăng nhập và password hợp lệ trong csdl
                     var khachhang = database.Customers.FirstOrDefault(k => k.NameCus == cust.NameCus && k.PassCus == cust.PassCus);
+                    var admin = database.AdminUsers.FirstOrDefault(k=>k.NameUser==cust.NameCus && k.PasswordUser==cust.PassCus);
                     if(khachhang != null)
                     {
-                        ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
+                        
                         //lưu vào sesion
                         Thread.Sleep(2000);
                         Session["TaiKhoan"] = khachhang.NameCus;
-                        
-                        return RedirectToAction("TrangChu1", "Home");
+                        ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
+                        return RedirectToAction("ProductList", "Products");
 
+                    }else if(admin != null)
+                    {
+                        Session["admin"] = admin.NameUser;
+
+                        return RedirectToAction("Index", "Categories");
                     }
                     else
                     {
@@ -89,7 +95,12 @@ namespace demoweb.Controllers
         }
         public ActionResult Logout()
         {
-            Session.Abandon();
+            if (Session["taikhoan"] != null)
+            {
+                Session.Abandon();
+                return RedirectToAction("ProductList", "Products");
+               
+            }
             return RedirectToAction("TrangChu", "Home");
         }
     }

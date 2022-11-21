@@ -13,15 +13,19 @@ namespace demoweb.Controllers
         // GET: Cart
         public List<CartItem> GetCart()
         {
-            List<CartItem> myCart = Session["GioHang"] as
-            List<CartItem>;
-            //Nếu giỏ hàng chưa tồn tại thì tạo mới và đưa vào Session
-            if (myCart == null)
-            {
-                myCart = new List<CartItem>();
-                Session["GioHang"] = myCart;
-            }
-            return myCart;
+           
+            
+                List<CartItem> myCart = Session["GioHang"] as
+                List<CartItem>;
+                //Nếu giỏ hàng chưa tồn tại thì tạo mới và đưa vào Session
+                if (myCart == null)
+                {
+                    myCart = new List<CartItem>();
+                    Session["GioHang"] = myCart;
+                }
+                return myCart;
+            
+           
         }
         public ActionResult AddToCart(int id)
         {
@@ -89,9 +93,17 @@ namespace demoweb.Controllers
         //XÓA GIỎ HÀNG
         public ActionResult ClearCart()
         {
-            List<CartItem> myCart = GetCart();
-            myCart.Clear();
-            return RedirectToAction("Trangchu", "home");
+            if (Session["TaiKhoan"] != null)
+            {
+                List<CartItem> myCart = GetCart();
+                myCart.Clear();
+                return RedirectToAction("GetCartInfo", "Cart");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Users");
+            }
+           
         }
         //edit số hàng thêm hoặc bớt
         public ActionResult update_quatity(FormCollection form)
@@ -114,7 +126,8 @@ namespace demoweb.Controllers
 
             return RedirectToAction("GetCartInfo", "Cart");
         }
-        public ActionResult CheckOut(FormCollection form)
+
+     /*   public ActionResult CheckOut(FormCollection form)
         {
             try
             {
@@ -149,6 +162,6 @@ namespace demoweb.Controllers
         public ActionResult checking_sucess()
         {
             return View();
-        }
+        }*/
     }
 }

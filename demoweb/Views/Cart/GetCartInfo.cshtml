@@ -63,33 +63,9 @@
                 <td colspan="5">Tổng số lượng: @ViewBag.TotalNumber</td>
                 <td colspan="1">Tổng tiền: @ViewBag.TotalPrice</td>
             </tr>
-            <tr>
-                @using (Html.BeginForm("CheckOut", "Cart"))
-                 {
-                <table>
-                    <tr>
-                        <td>
-                            code
-                        </td>
-                        <td>
-                            <input type="number" name="ID" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            code2
-                        </td>
-                        <td>
-                            <input type="number" name="AddressDeliverry" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <input type="submit" value="CheckOut" />
-                    </tr>
-                </table>
-                }
-            </tr>
+          
         </tbody>
     </table>
+    
     <a href="/Cart/ClearCart" class="btn btn-primary">THANH TOAN</a>
 </div>
