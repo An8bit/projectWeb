@@ -2554,6 +2554,7 @@
     <Content Include="Views\Shared\_LayoutLoginweb.cshtml" />
     <Content Include="Views\Home\TrangChu1.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Home\CuaHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
