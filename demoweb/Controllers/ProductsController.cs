@@ -192,7 +192,7 @@ namespace demoweb.Controllers
             // Nếu page = null thì đặt lại page là 1.
             if (page == null) page = 1;
             // Trả về các product được phân trang theo kích thước và số trang.
-            return View(products.ToList());
+            return View(products.ToPagedList(pageNumber, pageSize));
         }
         protected override void Dispose(bool disposing)
         {
