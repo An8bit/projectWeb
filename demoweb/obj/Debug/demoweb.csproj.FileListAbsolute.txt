@@ -409,3 +409,7 @@ D:\Hoc_web\DO_AN_web\projectWeb\demoweb\bin\PagedList.dll
 D:\Hoc_web\DO_AN_web\projectWeb\demoweb\bin\PagedList.Mvc.dll
 D:\Hoc_web\DO_AN_web\projectWeb\demoweb\bin\PagedList.xml
 D:\Hoc_web\DO_AN_web\projectWeb\demoweb\bin\PagedList.Mvc.xml
+C:\Users\ASUS\Desktop\WEB CHINH\projectWeb\demoweb\bin\PagedList.dll
+C:\Users\ASUS\Desktop\WEB CHINH\projectWeb\demoweb\bin\PagedList.Mvc.dll
+C:\Users\ASUS\Desktop\WEB CHINH\projectWeb\demoweb\bin\PagedList.xml
+C:\Users\ASUS\Desktop\WEB CHINH\projectWeb\demoweb\bin\PagedList.Mvc.xml
