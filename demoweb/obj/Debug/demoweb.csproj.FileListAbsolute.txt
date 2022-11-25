@@ -405,3 +405,7 @@ D:\Hoc_web\DO_AN_web\projectWeb-main\demoweb\obj\Debug\demoweb.csproj.CoreCompil
 D:\Hoc_web\DO_AN_web\projectWeb-main\demoweb\obj\Debug\demoweb.csproj.CopyComplete
 D:\Hoc_web\DO_AN_web\projectWeb-main\demoweb\obj\Debug\demoweb.dll
 D:\Hoc_web\DO_AN_web\projectWeb-main\demoweb\obj\Debug\demoweb.pdb
+D:\Hoc_web\DO_AN_web\projectWeb\demoweb\bin\PagedList.dll
+D:\Hoc_web\DO_AN_web\projectWeb\demoweb\bin\PagedList.Mvc.dll
+D:\Hoc_web\DO_AN_web\projectWeb\demoweb\bin\PagedList.xml
+D:\Hoc_web\DO_AN_web\projectWeb\demoweb\bin\PagedList.Mvc.xml

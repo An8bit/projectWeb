@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using demoweb.Models;
 using System.IO;
 using EntityState = System.Data.Entity.EntityState;
+using PagedList;
 
 namespace demoweb.Controllers
 {
