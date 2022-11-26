@@ -131,41 +131,79 @@ namespace demoweb.Controllers
             return RedirectToAction("GetCartInfo", "Cart");
         }
 
-     /*   public ActionResult CheckOut(FormCollection form)
+
+        /*   public ActionResult CheckOut(FormCollection form)
+           {
+               try
+               {
+                   List<CartItem> myCart = GetCart();
+
+                   OrderPro oder = new OrderPro();
+                   oder.DateOrder = DateTime.Now;
+                   oder.AddressDeliverry = form["AddressDeliverry"];
+                   oder.IDCus = int.Parse(form["ID"]);
+                   database.OrderProes.Add(oder);
+                   foreach (var item in myCart)
+                   {
+                       OrderDetail detail = new OrderDetail();
+                       detail.IDOrder = oder.ID;
+                       detail.IDProduct = item.ProductID;
+                       detail.UnitPrice = (double)item.Price;
+                       detail.Quantity = item.Number;
+                       database.OrderDetails.Add(detail);
+                   }
+                   database.SaveChanges();
+                   myCart.Clear();
+                   return RedirectToAction("checking_sucess", "Cart");
+
+               }
+               catch
+               {
+                   return Content("error checkout");
+
+               }
+
+           }
+           public ActionResult checking_sucess()
+           {
+               return View();
+           }*/
+        public ActionResult ConfirmCart()
         {
-            try
-            {
-                List<CartItem> myCart = GetCart();
-
-                OrderPro oder = new OrderPro();
-                oder.DateOrder = DateTime.Now;
-                oder.AddressDeliverry = form["AddressDeliverry"];
-                oder.IDCus = int.Parse(form["ID"]);
-                database.OrderProes.Add(oder);
-                foreach (var item in myCart)
-                {
-                    OrderDetail detail = new OrderDetail();
-                    detail.IDOrder = oder.ID;
-                    detail.IDProduct = item.ProductID;
-                    detail.UnitPrice = (double)item.Price;
-                    detail.Quantity = item.Number;
-                    database.OrderDetails.Add(detail);
-                }
-                database.SaveChanges();
-                myCart.Clear();
-                return RedirectToAction("checking_sucess", "Cart");
-
-            }
-            catch
-            {
-                return Content("error checkout");
-
-            }
-           
+            if (Session["TaiKhoan"] == null) //Chưa đăng nhập
+                return RedirectToAction("Login", "Users");
+            List<CartItem> myCart = GetCart();
+            if (myCart == null || myCart.Count == 0) //Chưa có giỏ hàng hoặcchưa có sp
+            return RedirectToAction("Index", "CustomerProducts");
+            ViewBag.TotalNumber = GetTotalNumber();
+            ViewBag.TotalPrice = GetTotalPrice();
+            return View(myCart); //Trả về View xác nhận đặt hàng
         }
-        public ActionResult checking_sucess()
-        {
-            return View();
-        }*/
+       
+        //public ActionResult AgreeCart()
+        //{
+        //    Customer khach = Session["TaiKhoan"] as Customer; //Khách
+        //    List<CartItem> myCart = GetCart(); //Giỏ hàng
+        //    OrderPro DonHang = new OrderPro(); //Tạo mới đơn đặt hàng
+        //    DonHang.IDCus = khach.IDCus;
+        //    DonHang.DateOrder = DateTime.Now;
+        //    DonHang.AddressDeliverry = "PLEASE CONTACT CUSTOMER";
+        //    database.OrderProes.Add(DonHang);
+        //    database.SaveChanges();
+        //    //Lần lượt thêm từng chi tiết cho đơn hàng trên
+        //    foreach (var product in myCart)
+        //    {
+        //        OrderDetail chitiet = new OrderDetail();
+        //        chitiet.IDOrder = DonHang.ID;
+        //        chitiet.IDProduct = product.ProductID;
+        //        chitiet.Quantity = product.Number;
+        //        chitiet.UnitPrice = (double)product.Price;
+        //        database.OrderDetails.Add(chitiet);
+        //    }
+        //    database.SaveChanges();
+        //    //Xóa giỏ hàng
+        //    Session["GioHang"] = null;
+        //    return RedirectToAction("Index", "CustomerProducts");
+        //}
     }
 }

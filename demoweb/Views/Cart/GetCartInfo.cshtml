@@ -26,8 +26,9 @@
                 <th>SỐ LƯỢNG</th>
                 <th>ĐƠN GIÁ</th>
                 <th>ĐIỀU CHỈNH</th>
-                <th>THÀNH TIỀN</th>
-                <th>XÓA HÀNG</th>
+                <th>THÀNH TIỀN</th>              
+                <th>CHI TIẾT</th>              
+                <th>XÓA</th>
             </tr>
         </thead>
         <tbody>
@@ -35,7 +36,7 @@
             {
 
             <tr>
-               
+
                 <td>@product.ProductID  </td>
                 <td>@product.NamePro</td>
                 <td><img src="~/Images/@product.ImagePro" /></td>
@@ -46,17 +47,24 @@
                     {
                         <input type="hidden" value="@product.ProductID" name="Idpro" />
                         <input type="number" value="@product.Number" name="quantity" />
-                        <input type="submit" value="Update" />
+                        <input class="btn btn-primary" type="submit" value="Update" />
 
                     }
-
+                     
 
 
                 </td>
                 <td>@product.FinalPrice()</td>
                 <td>
-                    <a href="/Cart/Remove/@product.ProductID" class="btn btn-danger">Xóa</a>
-                </td>
+                    @Html.ActionLink("Details", "Details", "CustomerProducts", new
+                    {
+                        id = product.ProductID
+                    }, new { @class = "btn btn-success" })
+            </td>
+           
+            <td>
+                <a href="/Cart/Remove/@product.ProductID" class="btn btn-danger">Xóa</a>
+            </td>
             </tr>
             }
             <tr style="font-weight:bold; text-align:right; color:red;">
@@ -67,5 +75,5 @@
         </tbody>
     </table>
     
-    <a href="/Cart/ClearCart" class="btn btn-primary">THANH TOAN</a>
+    <a href="/Cart/ConfirmCart" class="btn btn-primary">THANH TOAN</a>
 </div>

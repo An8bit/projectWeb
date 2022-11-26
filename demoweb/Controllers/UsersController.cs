@@ -73,6 +73,7 @@ namespace demoweb.Controllers
                         
                         //lưu vào sesion
                         Thread.Sleep(2000);
+                        Session["tk"] = khachhang;
                         Session["TaiKhoan"] = khachhang.NameCus;
                         ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
                         return RedirectToAction("ProductList", "Products");

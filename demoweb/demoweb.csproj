@@ -140,6 +140,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CustomerProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2555,6 +2556,12 @@
     <Content Include="Views\Home\TrangChu1.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Home\CuaHang.cshtml" />
+    <Content Include="Views\OrderDetails\Create.cshtml" />
+    <Content Include="Views\OrderDetails\Delete.cshtml" />
+    <Content Include="Views\OrderDetails\Details.cshtml" />
+    <Content Include="Views\OrderDetails\Edit.cshtml" />
+    <Content Include="Views\OrderDetails\Index.cshtml" />
+    <Content Include="Views\Cart\ConfirmCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
