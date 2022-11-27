@@ -186,7 +186,7 @@ namespace demoweb.Controllers
             }
 
             // Khai báo mỗi trang 4 sản phẩm
-            int pageSize = 4;
+            int pageSize = 6;
             // Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
             // nếu page = null thì lấy giá trị 1 cho biến pageNumber.
             int pageNumber = (page ?? 1);
@@ -194,6 +194,9 @@ namespace demoweb.Controllers
             if (page == null) page = 1;
             // Trả về các product được phân trang theo kích thước và số trang.
             return View(products.ToPagedList(pageNumber, pageSize));
+            ViewBag.Cate = category;
+            ViewBag.Search = SearchString;
+
         }
         protected override void Dispose(bool disposing)
         {
