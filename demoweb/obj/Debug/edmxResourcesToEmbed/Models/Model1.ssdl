@@ -26,6 +26,8 @@
     <Property Name="PhoneCus" Type="nvarchar" MaxLength="15" />
     <Property Name="EmailCus" Type="nvarchar(max)" />
     <Property Name="PassCus" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="OrderDetail">
     <Key>
@@ -36,6 +38,7 @@
     <Property Name="IDOrder" Type="int" />
     <Property Name="Quantity" Type="int" />
     <Property Name="UnitPrice" Type="float" />
+    <Property Name="Size" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="OrderPro">
     <Key>
@@ -56,6 +59,8 @@
     <Property Name="Category" Type="nchar" MaxLength="20" />
     <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
     <Property Name="ImagePro" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Size" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK__OrderDeta__IDOrd__30F848ED">
     <End Role="OrderPro" Type="Self.OrderPro" Multiplicity="0..1" />

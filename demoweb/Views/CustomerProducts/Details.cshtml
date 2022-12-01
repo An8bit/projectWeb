@@ -19,12 +19,16 @@
             <p class="price">
                 Giá bán: <span style="color:red; font-size:24px;">
                     @Model.Price
-                VNĐ
-            </span>
-        </p>
-        <a class="btn btn-primary" href="@Url.Action("AddToCart", "Cart", new {id = Model.ProductID })">
-            ĐẶT MUA
-        </a>
-    </div>
+                    VNĐ
+                </span>
+            </p>
+
+
+
+            <a class="btn btn-primary" href="@Url.Action("AddToCart", "Cart", new {id = Model.ProductID })">
+                ĐẶT MUA
+            </a>
+        </div>
+       
 </div>
 </div>

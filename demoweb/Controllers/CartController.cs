@@ -130,6 +130,26 @@ namespace demoweb.Controllers
 
             return RedirectToAction("GetCartInfo", "Cart");
         }
+        public  ActionResult update_Size(FormCollection form)
+        {
+            List<CartItem> items = GetCart();
+            int id = int.Parse(form["Idpro"]);
+            var item = items.Find(s => s.ProductID == id);
+            int a = int.Parse(form["quantity"]);
+            if (a < 0)
+            {
+                return RedirectToAction("GetCartInfo", "Cart");
+            }
+            else
+            {
+                if (item != null)
+                {
+                    item.Number = a;
+                }
+            }
+
+            return RedirectToAction("GetCartInfo", "Cart");
+        }
 
 
         /*   public ActionResult CheckOut(FormCollection form)

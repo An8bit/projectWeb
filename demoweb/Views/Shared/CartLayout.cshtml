@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/mystyle.css" />
+    <link rel="stylesheet" href="~/Fonts/themify-icons/themify-icons.css" />
+    <link href="~/Scripts/script.js" rel="stylesheet" />
+    <script src="~/Scripts/JavaScriptlinedown.js"></script>
+</head>
+<body>
+    <div id="div-top">
+        <ul id="nav">
+            <li id="top-logo">
+                <img src="~/Images/logo-removebg-preview.png" alt="logo" class="logo" />
+
+            <li>
+            <li>
+                <a href="/Home/Trangchu">Trang Chủ</a>
+            </li>
+            <li>
+                <a href="/Home/Index">Giới Thiệu</a>
+            </li>
+            <li>
+                <a href="/Home/CuaHang">Cửa Hàng</a>
+            </li>
+            <li>
+                <a href="">Nhiều Hơn</a>
+                <ul class="subnav">
+                    <li>
+                        <a href="">content</a>
+                    </li>
+                    <li>
+                        <a href="">content</a>
+                    </li>
+                    <li>
+                        <a href="">content</a>
+                    </li>
+                </ul>
+            </li>
+            @* <li>
+            <div class="wrap">
+                <form action="" class="search" method="post">
+                    <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                    <button type="submit" class="searchButton">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </li>*@
+          
+        <div class="navlogin">
+            <a class="ti-github">
+                @if (Session["TaiKhoan"] != null)
+                {
+                    @Session["TaiKhoan"]
+
+                }
+            </a>
+            <ul class="navlog">
+                <li>
+                    <a href="/Home/TrangChu">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+         
+</div>
+
+    <div class="order-sidebar sidebar-right">
+        @RenderBody()
+    </div>
+
+    </div>
+    <footer class="footer" style="background-color: #333" ;>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="~/Images/logo-removebg-preview.png" width="90px" style="padding-top: 25px;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="color:gold;">
+                    <h5 class="text-md-right">© BOBATEA. All rights reserved.</h5>
+
+                </div>
+                <div class="col-md-4" style="padding: 50px;">
+                    <a href="" class="item-link" style=" padding: 20px">
+                        <img src="~/Fonts/themify-icons/SVG/facebook.svg" style="background-color:gold;width:30px" />
+                    </a>
+                    <a href="" class="item-link" style=" padding: 20px">
+                        <img src="~/Fonts/themify-icons/SVG/instagram.svg " style="background-color:gold;width:30px" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

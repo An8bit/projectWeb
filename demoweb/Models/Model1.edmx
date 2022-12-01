@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBSportStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBSportStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AdminUser">
           <Key>
             <PropertyRef Name="ID" />
@@ -31,6 +31,8 @@
           <Property Name="PhoneCus" Type="nvarchar" MaxLength="15" />
           <Property Name="EmailCus" Type="nvarchar(max)" />
           <Property Name="PassCus" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -41,6 +43,7 @@
           <Property Name="IDOrder" Type="int" />
           <Property Name="Quantity" Type="int" />
           <Property Name="UnitPrice" Type="float" />
+          <Property Name="Size" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="OrderPro">
           <Key>
@@ -61,6 +64,8 @@
           <Property Name="Category" Type="nchar" MaxLength="20" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
           <Property Name="ImagePro" Type="nvarchar(max)" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Size" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK__OrderDeta__IDOrd__30F848ED">
           <End Role="OrderPro" Type="Self.OrderPro" Multiplicity="0..1" />
@@ -134,8 +139,7 @@
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBSportStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -167,6 +171,8 @@
           <Property Name="EmailCus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PassCus" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="OrderProes" Relationship="Self.FK__OrderPro__IDCus__2D27B809" FromRole="Customer" ToRole="OrderPro" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -179,6 +185,7 @@
           <Property Name="UnitPrice" Type="Double" />
           <NavigationProperty Name="OrderPro" Relationship="Self.FK__OrderDeta__IDOrd__30F848ED" FromRole="OrderDetail" ToRole="OrderPro" />
           <NavigationProperty Name="Product" Relationship="Self.FK__OrderDeta__IDPro__300424B4" FromRole="OrderDetail" ToRole="Products" />
+          <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OrderPro">
           <Key>
@@ -203,6 +210,8 @@
           <Property Name="ImagePro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Category1" Relationship="Self.FK_Pro_Category" FromRole="Products" ToRole="Category" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__IDPro__300424B4" FromRole="Products" ToRole="OrderDetail" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Pro_Category">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
@@ -304,6 +313,8 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="DBSportStoreModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="IDCus" ColumnName="IDCus" />
                 <ScalarProperty Name="NameCus" ColumnName="NameCus" />
                 <ScalarProperty Name="PhoneCus" ColumnName="PhoneCus" />
@@ -315,6 +326,7 @@
           <EntitySetMapping Name="OrderDetails">
             <EntityTypeMapping TypeName="DBSportStoreModel.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDProduct" ColumnName="IDProduct" />
                 <ScalarProperty Name="IDOrder" ColumnName="IDOrder" />
@@ -336,6 +348,8 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="DBSportStoreModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="NamePro" ColumnName="NamePro" />
                 <ScalarProperty Name="DecriptionPro" ColumnName="DecriptionPro" />

@@ -1,0 +1,14 @@
+﻿body {
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+}) @section Scripts
+
+{
+    <script type="text/javascript"> $(document).ready(function () {
+                    $(".AddPopUp").click(function (e) {
+                        $('#Produc-popup').modal('show')
+                    });
+                });
+    </script>
+}
+}

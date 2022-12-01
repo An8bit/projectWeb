@@ -11,6 +11,8 @@ namespace demoweb.Models
         public int ProductID { get; set; }
         public string NamePro { get; set; }
         public string ImagePro { get; set; }
+
+        public string Size { get; set; }
         public decimal Price { get; set; }       
         public int Number { get; set; }
         //Tính FinalPrice = Price * Number
@@ -25,6 +27,7 @@ namespace demoweb.Models
             var productDB = db.Products.Single(s => s.ProductID == this.ProductID);
             this.NamePro = productDB.NamePro;
             this.ImagePro = productDB.ImagePro;
+            this.Size = productDB.Size;
             this.Price = (decimal)productDB.Price;
             this.Number = 1;
         }
