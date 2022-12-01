@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    
 }
 
 <div style="margin: 10px auto; width: 70%;">
@@ -22,6 +23,7 @@
                     VNĐ
                 </span>
             </p>
+<<<<<<< HEAD
 
 
 
@@ -30,5 +32,19 @@
             </a>
         </div>
        
+=======
+            <a class="btn btn-primary" href="@Url.Action("AddToCart", "Cart", new {id = Model.ProductID })">
+                ĐẶT MUA
+            </a>
+            <p>
+                <div class="fb-like" data-href="https://demoweb20221201151526.azurewebsites.net/CusTomerProducts/Details/" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="false"></div>
+            </p>
+        </div>
+    </div>
+>>>>>>> f316f39a36611944e279d058561ba6681c9afe03
 </div>
-</div>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0" nonce="R3V11G4H"></script>
+<div id="fb-root" style="text-align: center; font-size: calc(1.275rem + .3vw); font-family: var(--bs-body-font-family);">ĐÁNH GIÁ</div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0" nonce="j3VpksDv"></script>
+<div class="fb-comments" data-href="https://demoweb20221201151526.azurewebsites.net/CusTomerProducts/Details/" data-width="100%" data-numposts="5"></div>

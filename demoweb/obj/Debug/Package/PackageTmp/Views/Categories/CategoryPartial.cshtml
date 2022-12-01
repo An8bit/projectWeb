@@ -1,0 +1,51 @@
+﻿@model IEnumerable<demoweb.Models.Category>
+<style>
+    #div-u {
+        margin-top: 0;
+        background-color: #fff;
+        text-decoration: none;
+        
+       
+    }
+
+    .div-cate {
+        height: 30px;
+        width: 100%;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+        .div-cate a {
+            color: black;
+            text-decoration: none;
+            font-size: large;
+        }
+
+            .div-cate a:hover {
+                color: #d3b673;
+                text-decoration: none;
+            }
+    h3 {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-bottom: 1px solid #f1f1f1;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+</style>
+<br />
+<h3 style="color: #d3b673; text-align: center;margin-top:0;">Sản Phẩm</h3>
+<ul style="list-style-type: none;" id="div-u">
+    @{
+        foreach (var item in Model)
+        {
+            <li class="div-cate">
+                @Html.ActionLink(item.NameCate, "ProductList", "Products", new
+                {
+                    category
+               = item.IDCate
+                }, "")
+            </li>
+           
+        }
+    }
+</ul>
