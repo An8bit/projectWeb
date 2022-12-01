@@ -26,8 +26,7 @@ namespace demoweb.Models
             this.ProductID = ProductID;
             var productDB = db.Products.Single(s => s.ProductID == this.ProductID);
             this.NamePro = productDB.NamePro;
-            this.ImagePro = productDB.ImagePro;
-            this.Size = productDB.Size;
+            this.ImagePro = productDB.ImagePro;         
             this.Price = (decimal)productDB.Price;
             this.Number = 1;
         }

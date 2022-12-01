@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-﻿// T4 code generation is enabled for model 'C:\Users\ASUS\Desktop\WEB CHINH\projectWeb\demoweb\Models\Model1.edmx'. 
-=======
-﻿// T4 code generation is enabled for model 'D:\Hoc_web\BT_ThucHanh\projectWeb\demoweb\Models\Model1.edmx'. 
->>>>>>> f316f39a36611944e279d058561ba6681c9afe03
+﻿// T4 code generation is enabled for model 'D:\Hoc_web\DO_AN_web\projectWeb\demoweb\Models\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
