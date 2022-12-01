@@ -41,42 +41,40 @@
                 </ul>
             </li>
             @* <li>
-            <div class="wrap">
-                <form action="" class="search" method="post">
-                    <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
-                    <button type="submit" class="searchButton">
-                        Submit
-                    </button>
-                </form>
+                    <div class="wrap">
+                        <form action="" class="search" method="post">
+                            <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                            <button type="submit" class="searchButton">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </li>*@
+
+            <div class="navlogin">
+                <a class="ti-github">
+                    @if (Session["TaiKhoan"] != null)
+                    {
+                        @Session["TaiKhoan"]
+
+                    }
+                </a>
+                <ul class="navlog">
+                    <li>
+                        <a href="/Home/TrangChu">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+
             </div>
-        </li>*@
-          
-        <div class="navlogin">
-            <a class="ti-github">
-                @if (Session["TaiKhoan"] != null)
-                {
-                    @Session["TaiKhoan"]
 
-                }
-            </a>
-            <ul class="navlog">
-                <li>
-                    <a href="/Home/TrangChu">
-                        Logout
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-         
-</div>
+    </div>
 
     <div class="order-sidebar sidebar-right">
         @RenderBody()
     </div>
-
-    </div>
-    <footer class="footer" style="background-color: #333" ;>
+    <<footer class="footer" style="background-color: #333" ;>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -87,8 +85,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" style="color:gold;">
-                    <h5 class="text-md-right">© BOBATEA. All rights reserved.</h5>
+                <div class="col-md-4" style="color:gold">
+                    <h5 class="text-md-right" style="padding-top: 50px" ">© BOBATEA. All rights reserved.</h5>
 
                 </div>
                 <div class="col-md-4" style="padding: 50px;">
