@@ -2317,13 +2317,6 @@
     <Content Include="Fonts\themify-icons\fonts\themify.ttf" />
     <Content Include="Fonts\themify-icons\fonts\themify.woff" />
     <Content Include="Fonts\themify-icons\Themify IconFonts 5-23-2014.json" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="NOTEDIT\startbootstrap-sb-admin-2-gh-pages\.browserslistrc" />
     <Content Include="NOTEDIT\startbootstrap-sb-admin-2-gh-pages\.travis.yml" />
     <Content Include="NOTEDIT\startbootstrap-sb-admin-2-gh-pages\LICENSE" />
@@ -2502,6 +2495,16 @@
     <Content Include="NOTEDIT\startbootstrap-sb-admin-2-gh-pages\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="NOTEDIT\startbootstrap-sb-admin-2-gh-pages\vendor\jquery\jquery.min.map" />
     <Content Include="NOTEDIT\startbootstrap-sb-admin-2-gh-pages\vendor\jquery\jquery.slim.min.map" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\demoweb20221201151526 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demoweb20221201151526 - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demoweb20221201151526 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\JavaScriptlinedown.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

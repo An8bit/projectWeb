@@ -1,0 +1,36 @@
+﻿@model demoweb.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 10px auto; width: 70%;">
+    <h2 style="text-align: center ;color:deeppink">CHI TIẾT CATEGORY</h2>
+    <div>
+        <h4>THÔNG TIN CHI TIẾT</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                MÃ CATEGORY
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IDCate)
+            </dd>
+            <dt>
+                TÊN CATEGORY
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NameCate)
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new
+        {
+        @class = "btn btn-success"
+        }) |
+        @Html.ActionLink("TRỞ LẠI", "Index", null, new { @class = "btn btn-success" })
+    </p>
+</div>
