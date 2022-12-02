@@ -27,8 +27,6 @@
     <Property Name="PhoneCus" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="EmailCus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PassCus" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="OrderProes" Relationship="Self.FK__OrderPro__IDCus__2D27B809" FromRole="Customer" ToRole="OrderPro" />
   </EntityType>
   <EntityType Name="OrderDetail">
@@ -40,7 +38,6 @@
     <Property Name="IDOrder" Type="Int32" />
     <Property Name="Quantity" Type="Int32" />
     <Property Name="UnitPrice" Type="Double" />
-    <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="OrderPro" Relationship="Self.FK__OrderDeta__IDOrd__30F848ED" FromRole="OrderDetail" ToRole="OrderPro" />
     <NavigationProperty Name="Product" Relationship="Self.FK__OrderDeta__IDPro__300424B4" FromRole="OrderDetail" ToRole="Products" />
   </EntityType>
@@ -65,8 +62,6 @@
     <Property Name="Category" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="ImagePro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Quantity" Type="Int32" />
-    <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Category1" Relationship="Self.FK_Pro_Category" FromRole="Products" ToRole="Category" />
     <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__IDPro__300424B4" FromRole="Products" ToRole="OrderDetail" />
   </EntityType>

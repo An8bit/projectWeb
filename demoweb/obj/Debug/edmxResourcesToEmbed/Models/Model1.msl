@@ -28,8 +28,6 @@
           <ScalarProperty Name="PhoneCus" ColumnName="PhoneCus" />
           <ScalarProperty Name="EmailCus" ColumnName="EmailCus" />
           <ScalarProperty Name="PassCus" ColumnName="PassCus" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -41,7 +39,6 @@
           <ScalarProperty Name="IDOrder" ColumnName="IDOrder" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="Size" ColumnName="Size" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -64,8 +61,6 @@
           <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="ImagePro" ColumnName="ImagePro" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Size" ColumnName="Size" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

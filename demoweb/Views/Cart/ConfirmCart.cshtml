@@ -40,7 +40,7 @@
 <h2 style="text-align:center">Thông tin khách hàng</h2>
 <table class="table table-bordered">
     <tr>
-        <td>NAME: </td>
+        <td>Tên: </td>
         <td>@customer.NameCus</td>
     </tr>
     <tr>
@@ -48,13 +48,34 @@
         <td>@customer.PhoneCus</td>
     </tr>
     <tr>
-        <td>DATE: </td>
+        <td>Ngày: </td>
         <td>@DateTime.Now.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <td>Địa chỉ </td>
+        <td>
+            <label for="comment"></label>
+            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>Phương thức thanh toán </td>
+        <td>
+
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>THANH TOÁN KHI NHẬN HÀNG
+                <label class="form-check-label" for="radio1"></label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">THANH TOÁN QUA CHUYỂN KHOẢN
+                <label class="form-check-label" for="radio2"></label>
+            </div>
+        </td>
     </tr>
     <tr>
         <td colspan="2" style="text-align: center;">
 
-            @Html.ActionLink("AGREE", "ClearCart", null, new
+            @Html.ActionLink("HOÀN TẤT", "ClearCart", null, new
             {
                 @class = "btn btn-primary"
             })

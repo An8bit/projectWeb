@@ -64,9 +64,18 @@
                 </a>
                     <ul class="navlog"style=" padding: 20px;">
                         <li>
-                            <a href="/Users/Logout">
-                                Logout
-                            </a>
+                            @if (Session["TaiKhoan"] != null)
+                            {
+                                <a href="/Home/TrangChu">
+                                    Logout
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="#">
+                                    Logout
+                                </a>
+                            }
                         </li>
                     </ul>
                 
