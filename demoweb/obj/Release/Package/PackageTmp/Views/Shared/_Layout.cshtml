@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/5026e71056.js" crossorigin="anonymous"></script>
 
 
 </head>
@@ -45,19 +46,29 @@
                 </ul>
             </li>
             @* <li>
-                    <div class="wrap">
-                        <form action="" class="search" method="post">
-                            <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
-                            <button type="submit" class="searchButton">
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-                </li>*@
+                <div class="wrap">
+                    <form action="" class="search" method="post">
+                        <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                        <button type="submit" class="searchButton">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </li>*@
         </ul>
-        <a href="/Users/Login" class="ti-github">
-            ĐĂNG NHẬP
-        </a>
+
+        @if (Session["TaiKhoan"] != null)
+        {<a class="ti-github">
+              @Session["TaiKhoan"]
+           </a>
+         }
+
+           
+          else
+        {
+            <a href = "/Users/Login" class="ti-github">
+              ĐĂNG NHẬP
+             </a>}
     </div>
     <div id="bodi">
         <div class="sizeslide">
@@ -102,14 +113,41 @@
             @RenderBody()
         </div>
     </div>
-    <div class="div-footer">
-        <iframe width="100%" height="100" src="https://www.youtube.com/embed/jDXYpGZOSiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-        
+    <div-main-content>
+        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/jDXYpGZOSiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div-main-content>
+    <footer class="footer" style="background-color: #333" ;>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="~/Images/logo-removebg-preview.png" width="90px" style="padding-top: 25px;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="color:gold">
+                    <h5 class="text-md-right" style="padding-top: 50px" ">© BOBATEA. All rights reserved.</h5>
+
+                </div>
+                <div class="col-md-4" style="padding: 50px;">
+                    <a href="" class="item-link" style=" padding: 20px;font-size:30px;">
+
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="" class="item-link" style=" padding: 20px;font-size:30px;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+
 
 
 

@@ -46,19 +46,29 @@
                 </ul>
             </li>
             @* <li>
-                    <div class="wrap">
-                        <form action="" class="search" method="post">
-                            <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
-                            <button type="submit" class="searchButton">
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-                </li>*@
+                <div class="wrap">
+                    <form action="" class="search" method="post">
+                        <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                        <button type="submit" class="searchButton">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </li>*@
         </ul>
-        <a href="/Users/Login" class="ti-github">
-            ĐĂNG NHẬP
-        </a>
+
+        @if (Session["TaiKhoan"] != null)
+        {<a class="ti-github">
+              @Session["TaiKhoan"]
+           </a>
+         }
+
+           
+          else
+        {
+            <a href = "/Users/Login" class="ti-github">
+              ĐĂNG NHẬP
+             </a>}
     </div>
     <div id="bodi">
         <div class="sizeslide">

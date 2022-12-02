@@ -140,14 +140,21 @@ h3 {
 }
 .navlogin {
     float: right;
+    position: relative;
 }
     .navlogin .navlog {
         position: absolute;
         background-color: white;
         right: 0px;
         top: 50px;
-        display:inline-block;
+        display:none;
     }
+    .navlogin:hover ul{
+        display:block;
+        
+    }
+
+    
 #div-top .navlogin .navlog li:hover a
 {
     position:relative;
@@ -156,7 +163,9 @@ h3 {
 #div-top .ti-github:hover{
     color:white;
     background-color:deeppink;
+    
 }
+
 
 #div-top .search-icon {
     color: #ffff;
@@ -165,10 +174,10 @@ h3 {
 
 
 #div-main {
-   display: flex;
+    display: flex;
     flex-direction: row;
     padding-top: 55px;
-    background-color: #fbfbfb;
+    background-color: #f1f1f1;
 }
 
 #danhsach li:hover a {
@@ -194,24 +203,17 @@ h3 {
     background-color: #f1f1f1;
 }
 
-#div-footer {
-    height: 50px;
-    color: yellow;
-    background: linear-gradient(to right,#6E6E6E,#151515);
-    bottom: 0px;
-    text-align: center;
-    left: 50%;
-    padding-top: 25px;
-}
-.sidebar-left {
-    max-width: 25%;
-    color: #282828;
-    background: #ffffff;
-    height: fit-content;
-    box-shadow: 0 2px 7px 0 rgb(0 0 0 / 5%);
-    border-radius: 4px;
-    padding-bottom: 12px;
-}
+
+ 
+    .sidebar-left {
+        max-width: 25%;
+        color: #282828;
+        background: #ffffff;
+        height: fit-content;
+        box-shadow: 0 2px 7px 0 rgb(0 0 0 / 5%);
+        border-radius: 4px;
+        padding-bottom: 12px;
+    }
 
 .sidebar-right {
    
@@ -229,4 +231,28 @@ h3 {
     background-position: 8px 10px;
     background-size: 14px 14px
 }
+.modal-content{
+    height:500px;
+    width:700px;
+}
 
+.text-md-right{
+    padding-top:50px;
+}
+.item-link{
+    padding:0  50px;
+}
+.footer{
+    background-color:#333;
+}
+
+.item-link{
+    color:gold;
+}
+
+.ti-github li:hover a {
+    background-color:red;
+}
+.navlog{
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+}

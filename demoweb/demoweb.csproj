@@ -2506,8 +2506,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\demoweb20221201151526 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demoweb20221201151526 - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\demoweb20221201151526 - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\demoweb20221201151526 - ReadOnly - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\demoweb20221201151526 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\demoweb20221201151526 - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\JavaScriptlinedown.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

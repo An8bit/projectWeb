@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="D:\Hoc_web\BT_ThucHanh\projectWeb\demoweb\obj\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
-  <setAcl path="D:\Hoc_web\BT_ThucHanh\projectWeb\demoweb\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="D:\Hoc_web\BT_ThucHanh\projectWeb\demoweb\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <IisApp path="D:\Hoc_web\DO_AN_web\projectWeb\demoweb\obj\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="D:\Hoc_web\DO_AN_web\projectWeb\demoweb\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\Hoc_web\DO_AN_web\projectWeb\demoweb\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
 </sitemanifest>
