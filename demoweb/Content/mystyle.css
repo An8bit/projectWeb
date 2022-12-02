@@ -147,9 +147,12 @@ h3 {
         background-color: white;
         right: 0px;
         top: 50px;
-        display:block;
+        display:none;
     }
-    .nav
+    .navlogin:hover ul{
+        display:block;
+        
+    }
 
     
 #div-top .navlogin .navlog li:hover a
@@ -160,7 +163,9 @@ h3 {
 #div-top .ti-github:hover{
     color:white;
     background-color:deeppink;
+    
 }
+
 
 #div-top .search-icon {
     color: #ffff;
@@ -240,6 +245,14 @@ h3 {
 .footer{
     background-color:#333;
 }
-.navlog li:hover a{
 
+.item-link{
+    color:gold;
+}
+
+.ti-github li:hover a {
+    background-color:red;
+}
+.navlog{
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
 }

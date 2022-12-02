@@ -566,6 +566,7 @@
     <Content Include="Fonts\themify-icons\themify-icons.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\facebook-square.svg" />
     <Content Include="Images\logo-removebg-preview.png" />
     <Content Include="Images\Trasua1.png" />
     <Content Include="Images\trasuabacha.png" />
